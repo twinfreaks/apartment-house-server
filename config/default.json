@@ -1,0 +1,92 @@
+{
+  "db": {
+    "host": "ec2-54-225-230-243.compute-1.amazonaws.com",
+    "port": 5432,
+    "name": "d7ef1cmu1jvcdm",
+    "user": "dkojgfqufzzrbi",
+    "password": "a4f131bbf8cce19bc87ef5692d11589049ebbe1879148e1da5d7a7ca4428aa14",
+	"ssl": true,
+	"poolSize": 10,
+    "migrationStrategy": "safe"
+  },
+  
+//  "db": {
+//    "host": "185.69.152.78",
+//    "port": 5432,
+//    "name": "osbb",
+//    "user": "osbb",
+//    "password": "osbb2017",
+//    "ssl": false,
+//    "poolSize": 10,
+//    "migrationStrategy": "alter"
+//  },
+  
+//  "db": {
+//    "host": "127.0.0.1",
+//    "port": 5432,
+//    "name": "osbb",
+//    "user": "postgres",
+//    "password": "root",
+//    "ssl": false,
+//    "poolSize": 10,
+//    "migrationStrategy": "alter"
+//  },
+  
+//  "db": {
+//    "host": "185.69.152.78",
+//    "port": 5432,
+//    "name": "osbb",
+//    "user": "osbb",
+//    "password": "osbb2017",
+//    "ssl": true,
+//    "poolSize": 10,
+//    "migrationStrategy": "safe"
+//  },
+
+  "auth": {
+    "passwordHash": "233fdddssd3s12",
+    "algorithmHash": "sha256",
+    "jwtPrivateKey": "23423jrdfvjkdn4r3r23eedr89834",
+    "jwtExpTime": "604800"
+  },
+  
+  "cors": {
+    "origin": "http://localhost:4200",
+    "credentials": true
+  },
+
+  "oAuth": {
+      "google": {
+        "oAuthEndpoint": "https://accounts.google.com/o/oauth2/auth",
+        "oAuthTokenInfoEndpoint": "https://accounts.google.com/o/oauth2/auth",
+        "clientId": "clientId",
+        "clientSecret": "clientSecret",
+        "redirectUri": "http://127.0.0.1:4200/oauth2callback"
+      },
+      "fb": {
+        "oAuthEndpoint": "https://www.facebook.com/v2.8/dialog/oauth",
+        "oAuthTokenInfoEndpoint": "https://graph.facebook.com/v2.8/oauth/access_token",
+        "oAuthGraphApi": "https://graph.facebook.com/me",
+        "clientId": "clientId",
+        "clientSecret": "clientSecret",
+        "redirectUri": "http://localhost:4200/oauth2callback"
+      }
+  },
+
+  "schedulerMongoDb": "mongodb://localhost:27017/scheduler",
+
+  "smsPhoneLogin": "smsCenterLogin",
+  "smsPassword": "smsCenterPassword",
+  "smsAlphaName": "InfoCentr",
+
+  "mobileCodes": "050,063,066,067,068,073,089,092,093,094,095,096,097,098,099",
+
+  "frontendHost": "http://localhost:4200",
+
+  "smtpService": "gmail",
+  "smtpUsername": "smtpUsername",
+  "smtpPassword": "smtpPassword",
+  "smtpSender": "smtpSenderMail",
+
+  "restorePswdTokenLife": 1800
+}
