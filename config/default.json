@@ -1,13 +1,24 @@
 {
+//  "db": {
+//    "host": "ec2-54-225-230-243.compute-1.amazonaws.com",
+//    "port": 5432,
+//    "name": "d7ef1cmu1jvcdm",
+//    "user": "dkojgfqufzzrbi",
+//    "password": "a4f131bbf8cce19bc87ef5692d11589049ebbe1879148e1da5d7a7ca4428aa14",
+//	"ssl": true,
+//	"poolSize": 10,
+//    "migrationStrategy": "safe"
+//  },
+  
   "db": {
-    "host": "ec2-54-225-230-243.compute-1.amazonaws.com",
+    "host": "ec2-23-21-220-152.compute-1.amazonaws.com",
     "port": 5432,
-    "name": "d7ef1cmu1jvcdm",
-    "user": "dkojgfqufzzrbi",
-    "password": "a4f131bbf8cce19bc87ef5692d11589049ebbe1879148e1da5d7a7ca4428aa14",
-	"ssl": true,
-	"poolSize": 10,
-    "migrationStrategy": "safe"
+    "name": "d8jihhgs5837dq",
+    "user": "lbpyjqqywkurxv",
+    "password": "fc2dad73123599185d086d26ad7eaef3b0463c8be278a6bca989b02b6e7cb137",
+    "ssl": true,
+    "poolSize": 10,
+    "migrationStrategy": "alter"
   },
   
 //  "db": {
