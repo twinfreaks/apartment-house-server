@@ -1,0 +1,13 @@
+# dependencies
+/node_modules
+/node_modules/
+/config/default.json
+/config/production.json
+/userfiles/
+/.DS_Store
+/config/deploy/
+/config/deploy.rb
+/Capfile
+/log/ 
+/log/capistrano.log
+/.idea/
