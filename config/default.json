@@ -84,7 +84,7 @@
       }
   },
 
-  "schedulerMongoDb": "mongodb://ds159200.mlab.com:59200/scheduler",
+  "schedulerMongoDb": "mongodb://ds159200.mlab.com:59200/heroku_k7vgbvrw",
 
   "smsPhoneLogin": "smsCenterLogin",
   "smsPassword": "smsCenterPassword",
