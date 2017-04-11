@@ -14,18 +14,13 @@ var express = require('express'),
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-// app.use(cors({
-//         origin: corsConfig.corsConfig,
-//         credentials: corsConfig.credentials
-//     }
-// ));
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "http://apartment-house.herokuapp.com");
   res.header("Access-Control-Allow-Headers", "authorization, Origin, X-Requested-With, Content-Type, Accept");
   res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
   next();
 });
-
 // app.use(cors());
 
 //Scheduler jobs
@@ -52,4 +47,10 @@ models.wl.initialize(models.config, function (err, models) {
 
     server.listen(port);
     console.log("app starts on port " + port);
+});
+
+// For all GET requests, send back index.html
+// so that PathLocationStrategy can be used
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname + '/dist/index.html'));
 });
