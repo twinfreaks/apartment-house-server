@@ -1,7 +1,6 @@
 # dependencies
 /node_modules
 /node_modules/
-/userfiles/
 /.DS_Store
 /config/deploy/
 /config/deploy.rb
