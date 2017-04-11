@@ -35,7 +35,7 @@ router.get('/', function (req, res) {
 //Application controllers
 require('./controllers/index')(app);
 //Middleware for serving static files.
-app.use(express.static(path.join(__dirname + '/dist/index.html')));
+// app.use(express.static(path.join(__dirname + '/dist/index.html')));
 //Application models and their initialization
 var models = require('./models');
 models.wl.initialize(models.config, function (err, models) {
@@ -47,6 +47,9 @@ models.wl.initialize(models.config, function (err, models) {
 
     server.listen(port);
     console.log("app starts on port " + port);
+});
+app.use(function(req, res, next) {
+  res.sendFile("index.html");
 });
 
 // For all GET requests, send back index.html
