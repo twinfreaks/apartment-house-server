@@ -15,17 +15,15 @@ var express = require('express'),
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/index.html'));
-});
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://apartment-house.herokuapp.com");
-  res.header("Access-Control-Allow-Headers", "authorization, Origin, X-Requested-With, Content-Type, Accept");
-  res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
-  next();
-});
-// app.use(cors());
+
+// app.use(function(req, res, next) {
+//   res.header("Access-Control-Allow-Origin", "http://apartment-house.herokuapp.com");
+//   res.header("Access-Control-Allow-Headers", "authorization, Origin, X-Requested-With, Content-Type, Accept");
+//   res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
+//   next();
+// });
+app.use(cors());
 
 //Scheduler jobs
 require('./jobs/smsSend');
