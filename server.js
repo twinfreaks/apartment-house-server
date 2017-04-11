@@ -48,12 +48,7 @@ models.wl.initialize(models.config, function (err, models) {
     server.listen(port);
     console.log("app starts on port " + port);
 });
-app.use(function(req, res, next) {
-  res.sendFile("index.html");
-});
 
-// For all GET requests, send back index.html
-// so that PathLocationStrategy can be used
-// app.get('/*', function(req, res) {
-//   res.sendFile(path.join(__dirname + '/dist/index.html'));
-// });
+app.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname + '/dist/index.html'));
+});
