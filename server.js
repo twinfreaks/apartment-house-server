@@ -35,7 +35,7 @@ router.get('/', function (req, res) {
 //Application controllers
 require('./controllers/index')(app);
 //Middleware for serving static files.
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname + '/dist/index.html')));
 //Application models and their initialization
 var models = require('./models');
 models.wl.initialize(models.config, function (err, models) {
@@ -51,6 +51,6 @@ models.wl.initialize(models.config, function (err, models) {
 
 // For all GET requests, send back index.html
 // so that PathLocationStrategy can be used
-app.get('/*', function(req, res) {
-  res.sendFile(path.join(__dirname + '/dist/index.html'));
-});
+// app.get('/*', function(req, res) {
+//   res.sendFile(path.join(__dirname + '/dist/index.html'));
+// });
