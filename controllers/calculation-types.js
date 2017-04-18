@@ -56,7 +56,7 @@ module.exports = function (router) {
 
     router.route('/')
         .get(function (req, res, next) {
-            let findType;
+            var findType;
             (typeof req.query.forAdmin !== 'undefined')?findType = {isDeleted: {'!': 'true'}}:findType = {};
             models.wl.collections.calculationtype.find(findType)
                 .then(function (calculationType) {

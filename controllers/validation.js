@@ -45,9 +45,14 @@ module.exports = function (router) {
         });
     }
     function phoneUnique(req, res) {
-        models.wl.collections.inhabitant.find({
+        var findCriteria = {
             "phoneNumber": req.query.value
-        })
+        };
+
+        if (req.query.valueAdd != 0) {
+            findCriteria.id = {"!": parseInt(req.query.valueAdd)};
+        }
+        models.wl.collections.inhabitant.find(findCriteria)
             .then(function (inhabitants) {
                 res.json({
                     data: inhabitants.length == 0,

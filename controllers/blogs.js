@@ -18,6 +18,7 @@ module.exports = function (router) {
                     return models.wl.collections.blog.findOne({
                         select: ['id', 'title'],
                         updatedDate: {'<': moment(blogTop.updatedDate).format()},
+                        isDeleted: false,
                         sort: 'updatedDate DESC'
                     });
                 }).then(function (blogPrev) {
@@ -25,6 +26,7 @@ module.exports = function (router) {
                     return models.wl.collections.blog.findOne({
                         select: ['id', 'title'],
                         updatedDate: {'>': moment(blogTop.updatedDate).format()},
+                        isDeleted: false,
                         sort: 'updatedDate ASC'
                     });
                 }).then(function (blogNext) {

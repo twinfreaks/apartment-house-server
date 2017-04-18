@@ -14,12 +14,6 @@ module.exports = function (router) {
         'LEFT JOIN role ON "role_users__user_roles".role_users = "role".id';
 
     router.route('/:id')
-        .all(function(req, res, next) {
-            if (_.intersection(req.user.roles, rolesAccepted).length === 0) {
-                return res.json({data: "Wrong role", code: 401});
-            }
-            next();
-        })
         .get(function (req, res, next) {
             var query = querySelectAllAdmins + ' WHERE "admin"."id" = ' + req.params.id;
             var adminQuery = Promise.promisify(models.wl.collections.admin.query);
@@ -90,12 +84,6 @@ module.exports = function (router) {
         });
 
     router.route('/')
-        .all(function(req, res, next) {
-            if (_.intersection(req.user.roles, rolesAccepted).length === 0) {
-                return res.json({data: "Wrong role", code: 401});
-            }
-            next();
-        })
         .post(function (req, res, next) {
             if (req.body.password != req.body.passwordRepeat) {
                 return res.json({data: "Passwords doesn't coincide", code: 500});

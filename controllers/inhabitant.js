@@ -10,6 +10,7 @@ module.exports = function (router) {
                 .findOne({
                     id: req.params.id
                 })
+                .populate('building')
                 .then(function (inhabitant) {
                     res.json(
                         {
@@ -47,7 +48,7 @@ module.exports = function (router) {
                         id: req.params.id
                     },
                     {
-                        photo: req.body.photo,
+                        photo: req.body.photo
                     })
                 .then(function (inhabitant) {
                     res.json({
