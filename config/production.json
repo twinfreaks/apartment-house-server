@@ -7,7 +7,7 @@
     "password": "a4f131bbf8cce19bc87ef5692d11589049ebbe1879148e1da5d7a7ca4428aa14",
     "ssl": true,
     "poolSize": 10,
-    "migrationStrategy": "alter"
+    "migrationStrategy": "safe"
   },
 //
 //  "db": {
