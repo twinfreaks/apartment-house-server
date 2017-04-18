@@ -61,7 +61,7 @@ module.exports = function (router) {
         .get(function (req, res) {
             models.wl.collections.event
                 .find({
-                        isDeleted: {'!': 'true'},
+                        isDeleted: {'!': 'true'}
                     })
                 .then(function (events) {
                     res.json({
