@@ -41,6 +41,7 @@ module.exports = function (router) {
 
     router.route('/')
         .get(function (req, res) {
+            console.log("request");
             models.wl.collections.requesttype
                 .find(
                     {isDeleted: {'!': 'true'}},

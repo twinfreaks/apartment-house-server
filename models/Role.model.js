@@ -39,7 +39,11 @@ var Role = {
             },
             {
                 "name": "inhabitant",
-                "description": "Inhabotant role"
+                "description": "Inhabitant role"
+            },
+            {
+                "name": "adminReceptionist",
+                "description": "Sanitarka role"
             }
         ]).then(function (roles) {
 

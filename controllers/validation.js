@@ -25,6 +25,7 @@ module.exports = function (router) {
                     return res.json({data: "Type not found", code: 500});
             }
         });
+
     function usernameUnique(req, res) {
         var findCriteria = {
             "username": req.query.value
@@ -35,7 +36,6 @@ module.exports = function (router) {
         }
         models.wl.collections.user.find(findCriteria)
             .then(function (users) {
-                console.log(users);
                 res.json({
                     data: users.length == 0,
                     code: 200
@@ -45,9 +45,14 @@ module.exports = function (router) {
         });
     }
     function phoneUnique(req, res) {
-        models.wl.collections.inhabitant.find({
+        var findCriteria = {
             "phoneNumber": req.query.value
-        })
+        };
+
+        if (req.query.valueAdd != 0) {
+            findCriteria.id = {"!": parseInt(req.query.valueAdd)};
+        }
+        models.wl.collections.inhabitant.find(findCriteria)
             .then(function (inhabitants) {
                 res.json({
                     data: inhabitants.length == 0,

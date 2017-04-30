@@ -30,6 +30,10 @@ var Event = {
         inhabitants: {
             collection: 'inhabitant',
             via: 'events'
+        },
+        eventgoogles: {
+             collection: 'eventgoogle',
+             via: 'event'
         }
     }
 };

@@ -1,15 +1,4 @@
 {
-//  "db": {
-//    "host": "ec2-54-225-230-243.compute-1.amazonaws.com",
-//    "port": 5432,
-//    "name": "d7ef1cmu1jvcdm",
-//    "user": "dkojgfqufzzrbi",
-//    "password": "a4f131bbf8cce19bc87ef5692d11589049ebbe1879148e1da5d7a7ca4428aa14",
-//	"ssl": true,
-//	"poolSize": 10,
-//    "migrationStrategy": "safe"
-//  },
-  
   "db": {
     "host": "ec2-23-21-220-152.compute-1.amazonaws.com",
     "port": 5432,
@@ -20,40 +9,39 @@
     "poolSize": 10,
     "migrationStrategy": "alter"
   },
-  
 //  "db": {
-//    "host": "185.69.152.78",
+//    "host": "localhost",
 //    "port": 5432,
-//    "name": "osbb",
-//    "user": "osbb",
-//    "password": "osbb2017",
-//    "ssl": false,
-//    "poolSize": 10,
-//    "migrationStrategy": "alter"
-//  },
-  
-//  "db": {
-//    "host": "127.0.0.1",
-//    "port": 5432,
-//    "name": "osbb",
+//    "name": "postgres",
 //    "user": "postgres",
 //    "password": "root",
-//    "ssl": false,
+//	"ssl": false,
+//	"poolSize": 10,
+//    "migrationStrategy": "safe"
+//  },
+  
+//    "db": {
+//      "host": "185.69.152.78",
+//      "port": 5432,
+//      "name": "osbb",
+//      "user": "osbb",
+//      "password": "osbb2017",
+//      "ssl": false,
+//      "poolSize": 10,
+//      "migrationStrategy": "safe"
+//    },
+  
+//  "db": {
+//    "host": "ec2-23-21-220-152.compute-1.amazonaws.com",
+//    "port": 5432,
+//    "name": "d8jihhgs5837dq",
+//    "user": "lbpyjqqywkurxv",
+//    "password": "fc2dad73123599185d086d26ad7eaef3b0463c8be278a6bca989b02b6e7cb137",
+//    "ssl": true,
 //    "poolSize": 10,
 //    "migrationStrategy": "alter"
 //  },
   
-//  "db": {
-//    "host": "185.69.152.78",
-//    "port": 5432,
-//    "name": "osbb",
-//    "user": "osbb",
-//    "password": "osbb2017",
-//    "ssl": true,
-//    "poolSize": 10,
-//    "migrationStrategy": "safe"
-//  },
-
   "auth": {
     "passwordHash": "233fdddssd3s12",
     "algorithmHash": "sha256",
@@ -62,42 +50,50 @@
   },
   
   "cors": {
-    "origin": "http://localhost:4200",
+    "origin": "http://apartment-house.herokuapp.com",
     "credentials": true
   },
-
+  
   "oAuth": {
-      "google": {
-        "oAuthEndpoint": "https://accounts.google.com/o/oauth2/auth",
-        "oAuthTokenInfoEndpoint": "https://accounts.google.com/o/oauth2/auth",
-        "clientId": "clientId",
-        "clientSecret": "clientSecret",
-        "redirectUri": "http://127.0.0.1:4200/oauth2callback"
-      },
-      "fb": {
-        "oAuthEndpoint": "https://www.facebook.com/v2.8/dialog/oauth",
-        "oAuthTokenInfoEndpoint": "https://graph.facebook.com/v2.8/oauth/access_token",
-        "oAuthGraphApi": "https://graph.facebook.com/me",
-        "clientId": "clientId",
-        "clientSecret": "clientSecret",
-        "redirectUri": "http://localhost:4200/oauth2callback"
-      }
+    "google": {
+      "oAuthEndpoint": "https://accounts.google.com/o/oauth2/auth",
+      "oAuthTokenInfoEndpoint": "https://accounts.google.com/o/oauth2/tokeninfo",
+      "clientId": "clientId",
+      "clientSecret": "clientSecret",
+      "redirectUri": "http://apartment-house.herokuapp.com/oauth2callback"
+    },
+    "fb": {
+      "oAuthEndpoint": "https://www.facebook.com/v2.8/dialog/oauth",
+      "oAuthTokenInfoEndpoint": "https://graph.facebook.com/v2.8/oauth/access_token",
+      "oAuthGraphApi": "https://graph.facebook.com/me",
+      "clientId": "clientId",
+      "clientSecret": "clientSecret",
+      "redirectUri": "http://apartment-house.herokuapp.com/oauth2callback"
+    }
   },
-
+  
   "schedulerMongoDb": "mongodb://user2:user@ds159200.mlab.com:59200/heroku_k7vgbvrw",
-
+  
   "smsPhoneLogin": "smsCenterLogin",
   "smsPassword": "smsCenterPassword",
   "smsAlphaName": "InfoCentr",
-
+  
   "mobileCodes": "050,063,066,067,068,073,089,092,093,094,095,096,097,098,099",
-
-  "frontendHost": "http://localhost:4200",
-
+  
+  "frontendHost": "http://apartment-house.herokuapp.com",
+  
   "smtpService": "gmail",
   "smtpUsername": "smtpUsername",
   "smtpPassword": "smtpPassword",
   "smtpSender": "smtpSenderMail",
-
-  "restorePswdTokenLife": 1800
+  
+  "restorePswdTokenLife": 1800,
+  
+  "profanity": {
+    "profanityWords": "profanity/profanity.csv",
+    "exceptionWords": "profanity/exceptions.csv",
+    "profanitySecondaryWords": "profanity/profanity2.csv",
+    "sensitivity": "../profanity/sensitivity.json",
+    "sensitivityPath": "profanity/sensitivity.json"
+  }
 }

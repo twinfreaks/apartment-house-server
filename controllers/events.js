@@ -59,19 +59,42 @@ module.exports = function (router) {
 
     router.route('/')
         .get(function (req, res) {
+          if(req.query.isOAuth === 'false'){
             models.wl.collections.event
+              .find({
+                isDeleted: {'!': 'true'}
+              })
+              .then(function (events) {
+                res.json({
+                  data: events, code: 200
+                });
+              }).catch(function (err) {
+              res.json({
+                data: err.toString(), code: 500
+              });
+            });
+          } else {
+            if(typeof req.query.inhabitant != 'undefined'){
+              models.wl.collections.event
                 .find({
-                        isDeleted: {'!': 'true'},
-                    })
+                  isDeleted: {'!': 'true'}
+                })
+                .populate('eventgoogles', {where: {inhabitant: req.query.inhabitant}})
                 .then(function (events) {
-                    res.json({
-                        data: events, code: 200
-                    });
+                  res.json({
+                    data: events, code: 200
+                  });
                 }).catch(function (err) {
                 res.json({
-                    data: err.toString(), code: 500
+                  data: err.toString(), code: 500
                 });
-            });
+              });
+            } else {
+              res.json({
+                data: 'must provide with inhabitant id', code: 500
+              });
+            }
+          }
         })
         .post(function (req, res) {
             models.wl.collections.event

@@ -25,7 +25,7 @@
   "oAuth": {
       "google": {
         "oAuthEndpoint": "https://accounts.google.com/o/oauth2/auth",
-        "oAuthTokenInfoEndpoint": "https://accounts.google.com/o/oauth2/auth",
+        "oAuthTokenInfoEndpoint": "https://accounts.google.com/o/oauth2/tokeninfo",
         "clientId": "clientId",
         "clientSecret": "clientSecret",
         "redirectUri": "http://127.0.0.1:4200/oauth2callback"
@@ -55,5 +55,13 @@
   "smtpPassword": "smtpPassword",
   "smtpSender": "smtpSenderMail",
 
-  "restorePswdTokenLife": 1800
+  "restorePswdTokenLife": 1800,
+
+  "profanity": {
+      "profanityWords": "profanity/profanity.csv",
+      "exceptionWords": "profanity/exceptions.csv",
+      "profanitySecondaryWords": "profanity/profanity2.csv",
+      "sensitivity": "../profanity/sensitivity.json",
+      "sensitivityPath": "profanity/sensitivity.json"
+  }
 }

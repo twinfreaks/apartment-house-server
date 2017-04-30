@@ -74,6 +74,7 @@ module.exports = function (router) {
         .get(function (req, res) {
             models.wl.collections.protocol
                 .find({
+                    isActive: true,
                     isDeleted: false
                 })
                 .then(function (protocols) {

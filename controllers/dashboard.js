@@ -130,7 +130,20 @@ module.exports = function (router) {
                 uniqCalcs;
 
             function getLastItem(item) {
-                if (item === table.calculation) {
+                if (item === table.protocol || item === table.blog) {
+                    item.find({
+                        isDeleted: false,
+                        isActive: true,
+                        sort: 'updatedAt DESC',
+                        limit: req.query.limit
+                    })
+                        .then(function (item) {
+                            res.json({data: item, code: 200});
+                        })
+                        .catch(function (err) {
+                            res.json({data: err.toString(), code: 500})
+                        });
+                } else if (item === table.calculation) {
                     item.find({
                         sort: 'date DESC',
                         inhabitant: req.query.inhabitant
@@ -210,6 +223,8 @@ module.exports = function (router) {
                                     .catch(function (err) {
                                         res.json({data: err.toString(), code: 500})
                                     });
+                            } else {
+                                res.json({data: item, code: 200})
                             }
                         });
                     break;
@@ -233,6 +248,8 @@ module.exports = function (router) {
                                     .catch(function (err) {
                                         res.json({data: err.toString(), code: 500})
                                     });
+                            } else {
+                                res.json({data: item, code: 200})
                             }
                         });
                     break;
@@ -256,6 +273,8 @@ module.exports = function (router) {
                                     .catch(function (err) {
                                         res.json({data: err.toString(), code: 500})
                                     });
+                            } else {
+                                res.json({data: item, code: 200})
                             }
                         });
                     break;
@@ -279,6 +298,8 @@ module.exports = function (router) {
                                     .catch(function (err) {
                                         res.json({data: err.toString(), code: 500})
                                     });
+                            } else {
+                                res.json({data: item, code: 200})
                             }
                         });
                     break;

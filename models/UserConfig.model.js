@@ -36,6 +36,9 @@ var UserConfig = {
         },
         viewOrder: {
             type: 'string'
+        },
+        theme: {
+            type: 'string'
         }
     }
 };
