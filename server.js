@@ -13,11 +13,11 @@ var express = require('express'),
     jwt = require('express-jwt'),
     useragent = require('express-useragent');
 
-// app.use(cors({
-//       origin: corsConfig.origin.split(","),
-//       credentials: corsConfig.credentials
-//     }
-// ));
+app.use(cors({
+      origin: corsConfig.origin.split(","),
+      credentials: corsConfig.credentials
+    }
+));
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "http://apartment-house.herokuapp.com");
   res.header("Access-Control-Allow-Headers", "authorization, Origin, X-Requested-With, Content-Type, Accept");
