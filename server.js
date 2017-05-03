@@ -20,11 +20,12 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(cors({
-      origin: corsConfig.origin.split(","),
-      credentials: corsConfig.credentials
-    }
-));
+app.use(cors());
+// app.use(cors({
+//       origin: corsConfig.origin.split(","),
+//       credentials: corsConfig.credentials
+//     }
+// ));
 //Serve static files from userfiles directory
 app.use("/userfiles", express.static('userfiles'));
 
