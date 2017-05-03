@@ -9,38 +9,6 @@
     "poolSize": 10,
     "migrationStrategy": "alter"
   },
-//  "db": {
-//    "host": "localhost",
-//    "port": 5432,
-//    "name": "postgres",
-//    "user": "postgres",
-//    "password": "root",
-//	"ssl": false,
-//	"poolSize": 10,
-//    "migrationStrategy": "safe"
-//  },
-  
-//    "db": {
-//      "host": "185.69.152.78",
-//      "port": 5432,
-//      "name": "osbb",
-//      "user": "osbb",
-//      "password": "osbb2017",
-//      "ssl": false,
-//      "poolSize": 10,
-//      "migrationStrategy": "safe"
-//    },
-  
-//  "db": {
-//    "host": "ec2-23-21-220-152.compute-1.amazonaws.com",
-//    "port": 5432,
-//    "name": "d8jihhgs5837dq",
-//    "user": "lbpyjqqywkurxv",
-//    "password": "fc2dad73123599185d086d26ad7eaef3b0463c8be278a6bca989b02b6e7cb137",
-//    "ssl": true,
-//    "poolSize": 10,
-//    "migrationStrategy": "alter"
-//  },
   
   "auth": {
     "passwordHash": "233fdddssd3s12",
