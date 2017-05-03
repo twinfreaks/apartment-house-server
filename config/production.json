@@ -7,7 +7,7 @@
     "password": "fc2dad73123599185d086d26ad7eaef3b0463c8be278a6bca989b02b6e7cb137",
     "ssl": true,
     "poolSize": 10,
-    "migrationStrategy": "alter"
+    "migrationStrategy": "safe"
   },
   
   "auth": {
@@ -18,7 +18,7 @@
   },
   
   "cors": {
-    "origin": "http://localhost:4200",
+    "origin": "http://apartment-house.herokuapp.com",
     "credentials": true
   },
   
@@ -28,7 +28,7 @@
       "oAuthTokenInfoEndpoint": "https://accounts.google.com/o/oauth2/tokeninfo",
       "clientId": "clientId",
       "clientSecret": "clientSecret",
-      "redirectUri": "http://127.0.0.1:4200/oauth2callback"
+      "redirectUri": "http://apartment-house.herokuapp.com/oauth2callback"
     },
     "fb": {
       "oAuthEndpoint": "https://www.facebook.com/v2.8/dialog/oauth",
@@ -36,11 +36,11 @@
       "oAuthGraphApi": "https://graph.facebook.com/me",
       "clientId": "clientId",
       "clientSecret": "clientSecret",
-      "redirectUri": "http://localhost:4200/oauth2callback"
+      "redirectUri": "http://apartment-house.herokuapp.com/oauth2callback"
     }
   },
   
-  "schedulerMongoDb": "mongodb://localhost:27017/scheduler",
+  "schedulerMongoDb": "mongodb://user2:user@ds159200.mlab.com:59200/heroku_k7vgbvrw",
   
   "smsPhoneLogin": "smsCenterLogin",
   "smsPassword": "smsCenterPassword",
@@ -48,7 +48,7 @@
   
   "mobileCodes": "050,063,066,067,068,073,089,092,093,094,095,096,097,098,099",
   
-  "frontendHost": "http://localhost:4200",
+  "frontendHost": "http://apartment-house.herokuapp.com",
   
   "smtpService": "gmail",
   "smtpUsername": "smtpUsername",
