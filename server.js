@@ -14,18 +14,18 @@ var express = require('express'),
     useragent = require('express-useragent');
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "http://apartment-house.herokuapp.com");
+  res.header("Access-Control-Allow-Origin", "https://apartment-house.herokuapp.com");
   res.header("Access-Control-Allow-Headers", "authorization, Origin, X-Requested-With, Content-Type, Accept");
   res.header("Access-Control-Allow-Methods", "GET,HEAD,PUT,PATCH,POST,DELETE");
   next();
 });
 
-app.use(cors());
-// app.use(cors({
-//       origin: corsConfig.origin.split(","),
-//       credentials: corsConfig.credentials
-//     }
-// ));
+// app.use(cors());
+app.use(cors({
+      origin: corsConfig.origin.split(","),
+      credentials: corsConfig.credentials
+    }
+));
 //Serve static files from userfiles directory
 app.use("/userfiles", express.static('userfiles'));
 
